@@ -59,7 +59,7 @@ public class Humain {
 	}
 	
 	public void faireConnaissanceAvec(Humain autreHumain) {
-		parler("Le marchand  " + getNom() + " rencontre le ");
+		parler(getNom() + " rencontre " + autreHumain.getNom());
 		direBonjour();
 		autreHumain.repondre(this);
 		memorise(autreHumain);

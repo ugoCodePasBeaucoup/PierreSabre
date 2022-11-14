@@ -28,15 +28,18 @@ public class HistoireTP4 {
 //		roro.donner(marco);
 //		roro.provoquer(yaku);
 		
-		marco.faireConnaissanceAvec(roro);
-		marco.faireConnaissanceAvec(yaku);
-		marco.faireConnaissanceAvec(chonin);
-		marco.faireConnaissanceAvec(kumi);
-		marco.listerConnaissance();
-		roro.listerConnaissance();
-		yaku.listerConnaissance();
+//		marco.faireConnaissanceAvec(roro);
+//		marco.faireConnaissanceAvec(yaku);
+//		marco.faireConnaissanceAvec(chonin);
+//		marco.faireConnaissanceAvec(kumi);
+//		marco.listerConnaissance();
+//		roro.listerConnaissance();
+//		yaku.listerConnaissance();
 		
+		Samourai akimoto = new Samourai("Miyamoto", "Akimoto", "saké", 80);
 		
+		akimoto.faireConnaissanceAvec(marco);
+		akimoto.listerConnaissance();
 		
 		
 		
