@@ -4,6 +4,9 @@ public class Humain {
 	private String nom;
 	private String boisson;
 	private int argent;
+	private int tailleMemoire = 3;
+	private Humain[] memoire = new Humain [tailleMemoire];
+	private int nbConnaisssance = 0;
 	
 	public Humain(String nom, String boisson, int argent) {
 		super();
@@ -40,11 +43,11 @@ public class Humain {
 
 	}
 	
-	public void gagnerArgent(int gain) {
+	protected void gagnerArgent(int gain) {
 		argent += gain;
 	}
 	
-	public void perdreArgent(int perte) {
+	protected void perdreArgent(int perte) {
 		argent -= perte;
 		if (argent < 0) {
 			throw new IllegalArgumentException("Création dete : " + argent);
@@ -54,6 +57,42 @@ public class Humain {
 	protected void parler(String texte) {
 		System.out.println(nom + " prend la parole : " + " \" " + texte + " \" \n");
 	}
+	
+	public void faireConnaissanceAvec(Humain autreHumain) {
+		this.parler("Le marchand  " + this.getNom() + " rencontre le ");
+		this.direBonjour();
+		autreHumain.repondre(this);
+		this.memorise(autreHumain);
+	}
+
+	private void memorise(Humain autreHumain) {
+		if (nbConnaisssance >= tailleMemoire){
+			for (int i = 0; i<nbConnaisssance-1; i++) {
+				this.memoire[i] = this.memoire[i+1];
+			}
+		this.memoire[tailleMemoire-1] = autreHumain;
+		}else {
+			this.memoire[nbConnaisssance] = autreHumain;
+			nbConnaisssance++;
+		}
+		
+	}
+
+	private void repondre(Humain humain) {
+		this.direBonjour();
+		this.memorise(humain);
+	}
+	
+	public void listerConnaissance() {
+		StringBuilder texte = new StringBuilder("Je connais beaucoup de monde dont : ");
+		for (int i = 0; i < nbConnaisssance; i++) {
+			texte.append(memoire[i].getNom() + ", ");
+		}
+		texte.delete(texte.length()-2, texte.length());
+		this.parler(texte.toString());
+	}
+	
+	
 	
 	
 	

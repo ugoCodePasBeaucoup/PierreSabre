@@ -10,7 +10,9 @@ public class HistoireTP4 {
 //		prof.acheter("jeu", 2);
 //		prof.acheter("kimono", 50);
 		
-		Commercant marco = new Commercant("Marco", 10);
+		Commercant marco = new Commercant("Marco", 20);
+		Commercant chonin = new Commercant("Chonin", 40);
+		Commercant kumi = new Commercant("Kumi", 10);
 //		marco.direBonjour();
 //		marco.seFaireExtorquer();
 //		marco.recevoir(15);
@@ -24,8 +26,16 @@ public class HistoireTP4 {
 		Ronin roro = new Ronin ("Roro", "shochu", 60);
 //		roro.direBonjour();
 //		roro.donner(marco);
+//		roro.provoquer(yaku);
 		
-		roro.provoquer(yaku);
+		marco.faireConnaissanceAvec(roro);
+		marco.faireConnaissanceAvec(yaku);
+		marco.faireConnaissanceAvec(chonin);
+		marco.faireConnaissanceAvec(kumi);
+		marco.listerConnaissance();
+		roro.listerConnaissance();
+		yaku.listerConnaissance();
+		
 		
 		
 		
