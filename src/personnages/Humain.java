@@ -59,10 +59,10 @@ public class Humain {
 	}
 	
 	public void faireConnaissanceAvec(Humain autreHumain) {
-		this.parler("Le marchand  " + this.getNom() + " rencontre le ");
-		this.direBonjour();
+		parler("Le marchand  " + getNom() + " rencontre le ");
+		direBonjour();
 		autreHumain.repondre(this);
-		this.memorise(autreHumain);
+		memorise(autreHumain);
 	}
 
 	private void memorise(Humain autreHumain) {
