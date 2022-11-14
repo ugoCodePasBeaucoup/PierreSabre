@@ -5,8 +5,8 @@ public class Humain {
 	private String boisson;
 	private int argent;
 	private int tailleMemoire = 3;
-	private Humain[] memoire = new Humain [tailleMemoire];
-	private int nbConnaisssance = 0;
+	protected Humain[] memoire = new Humain [tailleMemoire];
+	protected int nbConnaisssance = 0;
 	
 	public Humain(String nom, String boisson, int argent) {
 		super();
@@ -22,6 +22,14 @@ public class Humain {
 	public int getArgent() {
 		return argent;
 	}
+	
+	public int getNbConnaisssance() {
+		return nbConnaisssance;
+	}
+	public Humain[] getMemoire() {
+		return memoire;
+	}
+	
 	
 	public void direBonjour() {
 		parler("Bonjour ! Je m'appelle " + nom + " et j'aime boire du " + boisson);
@@ -59,7 +67,7 @@ public class Humain {
 	}
 	
 	public void faireConnaissanceAvec(Humain autreHumain) {
-		parler(getNom() + " rencontre " + autreHumain.getNom());
+		System.out.println("=== " + getNom() + " rencontre " + autreHumain.getNom() + "\n");
 		direBonjour();
 		autreHumain.repondre(this);
 		memorise(autreHumain);
